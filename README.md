@@ -1,65 +1,190 @@
-# My Portfolio Website - Overview 🚀
+# Gursimran Singh — Portfolio
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+A modern, interactive personal portfolio built with React, TypeScript, Vite, GSAP, and Three.js.
 
----
-
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
+🌐 **Live Portfolio:** https://YOUR-NETLIFY-URL.netlify.app
 
 ---
 
-## 🛠️ Instructions
+## 👨‍💻 About
 
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
+Hi, I'm **Gursimran Singh**, a Computer Science Engineering student interested in **Artificial Intelligence, Machine Learning, Generative AI, and Full-Stack Development**.
 
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+This portfolio showcases my technical skills, projects, experience, and current work in AI and software development.
 
 ---
 
-## ⚙️ Tech Stack
+## ✨ Features
 
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
-
----
-
-## 🎨 Assets Usage
-
-Some 3D assets included in this repository are free to use for learning purposes.
-
-However:
-
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
-
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+- Modern futuristic UI
+- Responsive design
+- Interactive animations
+- GSAP-powered animations and scrolling
+- Interactive particle/neural-network background
+- Project showcase with live demos and GitHub links
+- Skills and technology overview
+- Experience section
+- Resume download
+- Contact and social links
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- TypeScript
+- HTML5
+- CSS3
+- Vite
+
+### Animation & Visuals
+- GSAP
+- ScrollTrigger
+- ScrollSmoother
+- Three.js
+- React Three Fiber
+
+### Tools
+- Git
+- GitHub
+- npm
 
 ---
 
-## 📄 License
+## 🚀 Featured Projects
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+### 1. AI Co-Builder
 
-See the LICENSE file for full details
+An AI-assisted platform designed to help users plan and build software projects using intelligent project guidance.
 
+**Technologies:** Python, FastAPI, React, Gemini API, Machine Learning
+
+🔗 **Live Demo:** https://ai-cobuilder.netlify.app/
+
+---
+
+### 2. AI Stack Auditor
+
+An AI-powered tool for analyzing and auditing technology stacks and identifying potential issues.
+
+**Technologies:** Python, FastAPI, AI, REST APIs
+
+---
+
+### 3. Breast Cancer Prediction System
+
+A machine learning project that predicts the likelihood of breast cancer using trained classification models.
+
+**Technologies:** Python, Pandas, NumPy, Scikit-learn
+
+---
+
+### 4. Punjabi Music Recommender
+
+A machine learning-based recommendation system designed to recommend Punjabi songs based on user preferences and similarity.
+
+**Technologies:** Python, Pandas, NumPy, Scikit-learn, Streamlit
+
+---
+
+### 5. CodeSage AI
+
+An AI-powered multi-agent security auditing and automated code-fixing platform.
+
+CodeSage analyzes repositories using multiple security tools, uses an LLM for vulnerability triage, generates candidate fixes, verifies the fixes, and can create GitHub Pull Requests.
+
+**Technologies:**
+- Python
+- FastAPI
+- LangGraph
+- LLMs
+- Semgrep
+- Bandit
+- Gitleaks
+- React
+- GitHub API
+
+🚧 **Status:** In Progress
+
+---
+
+## 💼 Experience
+
+### Web Development Trainee — Deftsoft
+**June 2026 – July 2026**
+
+- Worked on full-stack web development using the MERN stack
+- Developed responsive React applications
+- Worked with REST APIs and backend logic
+- Worked with MongoDB and authentication
+- Used Git and modern development workflows
+
+### Project-Based Learning — ThinkNext Technologies
+**June 2025 – August 2025**
+
+- Developed Flask-based CRUD applications and REST APIs
+- Worked on data preprocessing and machine learning models
+- Built a Music Recommender System
+- Practiced debugging, testing, and optimization
+
+---
+
+## 📚 Currently Learning
+
+- Artificial Intelligence
+- Machine Learning
+- Generative AI
+- AI Agents
+- LangGraph
+- Retrieval-Augmented Generation (RAG)
+- Natural Language Processing
+- Next.js
+- TypeScript
+- Node.js
+
+---
+
+## 📊 Skills
+
+**Programming:**  
+Python, JavaScript, TypeScript, SQL
+
+**AI / ML:**  
+Machine Learning, Generative AI, LLM Integration, Scikit-learn, Pandas, NumPy
+
+**Backend:**  
+FastAPI, REST APIs, Flask, PostgreSQL
+
+**Frontend:**  
+React.js, HTML, CSS, Tailwind CSS
+
+**AI & Developer Tools:**  
+LangGraph, Google Gemini API, Git, GitHub
+
+---
+
+## 📫 Connect With Me
+
+- **GitHub:** https://github.com/GursimranSingh047
+- **LinkedIn:** https://www.linkedin.com/in/gursimran-singh-3ab29035a/
+- **Portfolio:** https://gursimran-portfolio-21.netlify.app
+- **Email:** gursimranbaidwan23@gmail.com
+
+---
+
+## 📄 Resume
+
+You can download my resume directly from my portfolio.
+
+---
+
+## ⭐ About This Repository
+
+This repository contains the source code for my personal portfolio website.
+
+If you find the project interesting, feel free to explore the code and projects.
+
+---
+
+### Built with React, TypeScript, Vite & GSAP
