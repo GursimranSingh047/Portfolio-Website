@@ -1,7 +1,7 @@
 import { lazy, Suspense, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 
 const Navbar = () => {
