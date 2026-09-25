@@ -2,7 +2,7 @@
 
 A modern, interactive personal portfolio built with React, TypeScript, Vite, GSAP, and Three.js.
 
-🌐 **Live Portfolio:** https://YOUR-NETLIFY-URL.netlify.app
+🌐 **Live Portfolio:** https://gursimran-portfolio-21.netlify.app
 
 ---
 
