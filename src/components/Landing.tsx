@@ -1,34 +1,53 @@
-import { PropsWithChildren } from "react";
+import { MdArrowForward, MdFileDownload } from "react-icons/md";
 import "./styles/Landing.css";
 
-const Landing = ({ children }: PropsWithChildren) => {
+const Landing = () => {
   return (
-    <>
-      <div className="landing-section" id="landingDiv">
-        <div className="landing-container">
-          <div className="landing-intro">
-            <h2>Hello! I'm</h2>
-            <h1>
-              MONCY
-              <br />
-              <span>YOHANNAN</span>
-            </h1>
+    <div className="landing-section" id="landingDiv">
+      <div className="landing-container">
+        <div className="landing-intro">
+          <h2>HELLO! I'M</h2>
+          <h1>
+            GURSIMRAN
+            <br />
+            <span className="name-purple">SINGH</span>
+          </h1>
+          <div className="landing-roles">
+            <div className="role-primary">AI/ML ENGINEER</div>
+            <div className="role-secondary">FULL-STACK DEVELOPER</div>
           </div>
-          <div className="landing-info">
-            <h3>A Creative</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Designer</div>
-              <div className="landing-h2-2">Developer</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">Developer</div>
-              <div className="landing-h2-info-1">Designer</div>
-            </h2>
+          <p className="landing-description">
+            I build intelligent products using AI, data and modern web technologies.
+          </p>
+          <div className="landing-cta">
+            <a href="#projects" className="cta-button cta-primary" data-cursor="disable">
+              <span>VIEW MY WORK</span>
+              <MdArrowForward className="cta-icon" />
+            </a>
+            <a
+              href="/resume.pdf"
+              className="cta-button cta-secondary"
+              data-cursor="disable"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Gursimran_Singh_Resume.pdf"
+            >
+              <span>DOWNLOAD RESUME</span>
+              <MdFileDownload className="cta-icon" />
+            </a>
           </div>
         </div>
-        {children}
+
+        <div className="landing-tagline">
+          <span>BUILDING</span>
+          <span>INTELLIGENT</span>
+          <span>SOLUTIONS</span>
+          <span>FOR A</span>
+          <span>BETTER</span>
+          <span>TOMORROW</span>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

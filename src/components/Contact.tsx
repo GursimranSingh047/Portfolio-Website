@@ -1,68 +1,117 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { MdOutlineEmail, MdFileDownload, MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 
 const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>Contact</h3>
-        <div className="contact-flex">
-          <div className="contact-box">
-            <h4>Email</h4>
-            <p>
-              <a href="mailto:example@mail.com" data-cursor="disable">
-                example@mail.com
-              </a>
-            </p>
-            <h4>Phone</h4>
-            <p>
-              <a href="tel:+9199999999" data-cursor="disable">
-                +91 99999 99999
-              </a>
-            </p>
+        {/* Top Tag & CTA */}
+        <div className="contact-header">
+          <div className="contact-badge">GET IN TOUCH</div>
+          <h2 className="contact-cta-title">
+            Let's build something <br />
+            <span>intelligent.</span>
+          </h2>
+          <p className="contact-bio">
+            <strong>Gursimran Singh</strong> — AI/ML Engineer | Full-Stack Developer
+          </p>
+        </div>
+
+        {/* 4 Interactive Action Buttons */}
+        <div className="contact-actions">
+          <a
+            href="mailto:gursimranbaidwan23@gmail.com"
+            className="contact-btn contact-btn-primary"
+            data-cursor="disable"
+            aria-label="Send Email to Gursimran Singh"
+          >
+            <MdOutlineEmail className="contact-btn-icon" />
+            <span>Email Me</span>
+            <MdArrowOutward className="contact-btn-arrow" />
+          </a>
+
+          <a
+            href="https://github.com/GursimranSingh047"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-btn contact-btn-glass"
+            data-cursor="disable"
+            aria-label="Visit Gursimran Singh GitHub Profile"
+          >
+            <FaGithub className="contact-btn-icon" />
+            <span>GitHub</span>
+            <MdArrowOutward className="contact-btn-arrow" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/gursimran-singh-3ab29035a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-btn contact-btn-glass"
+            data-cursor="disable"
+            aria-label="Visit Gursimran Singh LinkedIn Profile"
+          >
+            <FaLinkedinIn className="contact-btn-icon" />
+            <span>LinkedIn</span>
+            <MdArrowOutward className="contact-btn-arrow" />
+          </a>
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Gursimran_Singh_Resume.pdf"
+            className="contact-btn contact-btn-glass"
+            data-cursor="disable"
+            aria-label="Download Resume PDF"
+          >
+            <MdFileDownload className="contact-btn-icon" />
+            <span>Download Resume</span>
+          </a>
+        </div>
+
+        {/* Footer Area */}
+        <div className="contact-footer">
+          <div className="footer-left">
+            <span className="footer-brand">Gursimran.dev</span>
+            <p className="footer-role">AI/ML Engineer & Full-Stack Developer</p>
           </div>
-          <div className="contact-box">
-            <h4>Social</h4>
+
+          <div className="footer-center">
             <a
-              href="https://github.com"
-              target="_blank"
+              href="mailto:gursimranbaidwan23@gmail.com"
+              className="footer-email"
               data-cursor="disable"
-              className="contact-social"
             >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Linkedin <MdArrowOutward />
-            </a>
-            <a
-              href="https://x.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
+              gursimranbaidwan23@gmail.com
             </a>
           </div>
-          <div className="contact-box">
-            <h2>
-              Designed and Developed <br /> by <span>Moncy Yohannan</span>
-            </h2>
-            <h5>
-              <MdCopyright /> 2024
-            </h5>
+
+          <div className="footer-right">
+            <div className="footer-socials">
+              <a
+                href="https://github.com/GursimranSingh047"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                data-cursor="disable"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gursimran-singh-3ab29035a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                data-cursor="disable"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
+            <div className="footer-copyright">
+              <MdCopyright /> {new Date().getFullYear()} Gursimran Singh. All rights reserved.
+            </div>
           </div>
         </div>
       </div>

@@ -1,152 +1,156 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import {
+  FaBrain,
+  FaServer,
+  FaCode,
+  FaMicrochip,
+  FaCompass,
+} from "react-icons/fa6";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const skillCategories = [
+  {
+    id: "ai-ml",
+    title: "AI / MACHINE LEARNING",
+    icon: <FaBrain />,
+    skills: [
+      "Python",
+      "Machine Learning",
+      "Generative AI",
+      "LLM Integration",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+    ],
+  },
+  {
+    id: "backend",
+    title: "BACKEND",
+    icon: <FaServer />,
+    skills: [
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "SQL",
+      "PostgreSQL",
+      "JWT / Authentication",
+    ],
+  },
+  {
+    id: "frontend",
+    title: "FRONTEND",
+    icon: <FaCode />,
+    skills: ["React.js", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+  },
+  {
+    id: "tools-platforms",
+    title: "TOOLS & AI PLATFORMS",
+    icon: <FaMicrochip />,
+    skills: ["Git", "GitHub", "Docker", "Google Gemini API", "LangGraph"],
+  },
+];
+
+const exploringSkills = [
+  "TypeScript",
+  "Next.js",
+  "Node.js",
+  "NLP",
+  "RAG",
+  "AI Agents",
+];
 
 const WhatIDo = () => {
-  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
-    containerRef.current[index] = el;
-  };
-  useEffect(() => {
-    if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
-      });
-    }
-    return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
-      });
-    };
-  }, []);
-  return (
-    <div className="whatIDO">
-      <div className="what-box">
-        <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            I<span className="do-h2"> DO</span>
-          </div>
-        </h2>
-      </div>
-      <div className="what-box">
-        <div className="what-box-in">
-          <div className="what-border2">
-            <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-            </svg>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-            <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    const card = cardsRef.current[index];
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const card = cardsRef.current[index];
+    if (!card) return;
+    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+  };
+
+  return (
+    <div className="whatIDO skills-section section-container" id="skills">
+      {/* GSAP marker helper */}
+      <div className="what-box-in" style={{ display: "none" }}></div>
+
+      <div className="skills-container">
+        {/* Header */}
+        <div className="skills-header">
+          <div className="skills-badge">CAPABILITIES</div>
+          <h2>
+            Technical <br />
+            <span>Skills</span>
+          </h2>
+          <p className="skills-subtitle">
+            A focused overview of my core engineering toolkit across AI/ML, backend, frontend, and modern development platforms.
+          </p>
+        </div>
+
+        {/* 4 Main Skill Cards */}
+        <div className="skills-grid">
+          {skillCategories.map((category, index) => (
+            <div
+              key={category.id}
+              className="skill-card"
+              ref={(el) => (cardsRef.current[index] = el)}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+            >
+              <div className="skill-card-glow"></div>
+              <div className="skill-card-header">
+                <div className="skill-icon-box">{category.icon}</div>
+                <h3>{category.title}</h3>
               </div>
-              <div className="what-arrow"></div>
+              <div className="skill-pills-wrap">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="skill-pill">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Currently Exploring Sub-Section */}
+        <div className="exploring-card">
+          <div className="exploring-header">
+            <div className="exploring-icon-box">
+              <FaCompass />
+            </div>
+            <div>
+              <div className="exploring-title">CURRENTLY EXPLORING</div>
+              <p className="exploring-desc">
+                Currently exploring technologies for building more advanced AI-powered applications.
+              </p>
             </div>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
+          <div className="exploring-pills-wrap">
+            {exploringSkills.map((skill) => (
+              <span key={skill} className="exploring-pill">
+                <span className="exploring-dot"></span>
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -155,18 +159,3 @@ const WhatIDo = () => {
 };
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}

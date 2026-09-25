@@ -1,21 +1,18 @@
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { MdFileDownload } from "react-icons/md";
 import "./styles/SocialIcons.css";
-import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
   useEffect(() => {
     const social = document.getElementById("social") as HTMLElement;
+    if (!social) return;
 
     social.querySelectorAll("span").forEach((item) => {
       const elem = item as HTMLElement;
       const link = elem.querySelector("a") as HTMLElement;
+      if (!link) return;
 
       const rect = elem.getBoundingClientRect();
       let mouseX = rect.width / 2;
@@ -47,7 +44,6 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
       return () => {
@@ -60,31 +56,41 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com" target="_blank">
+          <a
+            href="https://github.com/GursimranSingh047"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+          >
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/gursimran-singh-3ab29035a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+          >
             <FaLinkedinIn />
           </a>
         </span>
-        <span>
-          <a href="https://x.com" target="_blank">
-            <FaXTwitter />
-          </a>
-        </span>
-        <span>
-          <a href="https://www.instagram.com" target="_blank">
-            <FaInstagram />
-          </a>
-        </span>
+        <div className="social-divider"></div>
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
+      <a
+        className="resume-button"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        download="Gursimran_Singh_Resume.pdf"
+        data-cursor="disable"
+        aria-label="Download Resume"
+      >
+        <span className="resume-dash"></span>
+        <span className="resume-icon">
+          <MdFileDownload />
         </span>
+        <HoverLinks text="DOWNLOAD RESUME" />
       </a>
     </div>
   );
